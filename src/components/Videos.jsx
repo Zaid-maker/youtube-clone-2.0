@@ -7,11 +7,19 @@ const Videos = ({ videos, direction }) => {
   if (!videos?.length) return <Loader />
 
   return (
-    <Stack>
-      <Box>
-        <VideoCard />
-        <ChannelDetail />
-      </Box>
+    <Stack
+      direction={direction || 'row'}
+      flexWrap="wrap"
+      justifyContent="start"
+      alignItems="start"
+      gap={3}
+    >
+      {videos.map((item, idx) => (
+        <Box key={idx}>
+          {item.id.videoId && <VideoCard video={item} />}
+          {item.id.channelId && <ChannelDetail channelDetail={item} />}
+        </Box>
+      ))}
     </Stack>
   )
 }
