@@ -4,7 +4,7 @@ import React from 'react'
 import { Loader, VideoCard, ChannelDetail } from './'
 
 const Videos = ({ videos, direction }) => {
-  // if (!videos.length) return <Loader />
+  if (!videos?.length) return <Loader />
 
   return (
     <Stack>
