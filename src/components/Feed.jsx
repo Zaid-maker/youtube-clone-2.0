@@ -1,7 +1,7 @@
 import { Box, Stack, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { Sidebar, Videos } from './'
-import { fetchFromAPI  } from '../utils/fetchFromAPI'
+import { fetchFromAPI } from '../utils/fetchFromAPI'
 
 const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState('new')
@@ -19,25 +19,12 @@ const Feed = () => {
   }, [selectedCategory])
 
   return (
-    <Stack
-      sx={{
-        flexDirection: {
-          sx: 'column',
-          md: 'row',
-        },
-      }}
-    >
+    <Stack sx={{ flexDirection: { sx: 'column', md: 'row' } }}>
       <Box
         sx={{
-          height: {
-            sx: 'auto',
-            md: '92vh',
-          },
+          height: { sx: 'auto', md: '92vh' },
           borderRight: '1px solid #3d3d3d',
-          px: {
-            sx: 0,
-            md: 2,
-          },
+          px: { sx: 0, md: 2 },
         }}
       >
         <Sidebar
@@ -54,14 +41,7 @@ const Feed = () => {
         </Typography>
       </Box>
 
-      <Box
-        p={2}
-        sx={{
-          overflowY: 'auto',
-          height: '90vh',
-          flex: 2,
-        }}
-      >
+      <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2 }}>
         <Typography
           variant="h4"
           fontWeight="bold"
